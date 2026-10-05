@@ -14,27 +14,34 @@ public class Irakurketa {
 	    Scanner sarrera = new Scanner(new FileReader(izena));
 
 	    String lerroa;
-	    int kont = -1;
 	    while (sarrera.hasNext()) {
-	      lerroa = sarrera.nextLine();
-	      String datuak[] = lerroa.split("###");
-	      for (String s: datuak) {
-	    	  kont++; 
-	    	  switch(kont) {
-	    	  	case 0: 
-	    	  		
-	    	  }
-	    		  
-	    	  System.out.println(s);
-	      }
+	    	lerroa = sarrera.nextLine();
+	    	String datuak[] = lerroa.split("###");
+	    	
+	    	String[] koAk = datuak[0].split("/");
+	    	String kodeaAk = koAk[4];
+	    	String izenaAk = datuak[1];
+	    	String[] koPe = datuak[2].split("/");
+	    	String kodeaPe = koPe[4];
+	    	String izenaPe = datuak[3];
+	    	
+	    	System.out.println("Aktorea:"+kodeaAk+izenaAk);
+	    	System.out.println("Pelikula:"+kodeaPe+izenaPe);
+	    	
+	    	Aktore a = new Aktore(izenaAk,kodeaAk);
+	    	Pelikula p = new Pelikula(izenaPe, kodeaPe);
+	    	a.filmaGehitu(p);
+	    	p.aktoreGehitu(a);
+	    	AktoreBiltegia.getAB().addAktore(a);
+	    	PelikulaBiltegia.getPB().addPelikula(p);
 	    }
-	     
 	    sarrera.close();
 	  } // try 
 	  catch (IOException e) {
 	    e.printStackTrace();
 	  }                                 
 	}
+	
 	
 	public void fitxategiaSortu(String fIzena, String[] lerroak) {
 		// Post: fIzena izeneko fitxategian idatzi dira lerroak

@@ -7,7 +7,16 @@ public class main {
 
 		Irakurketa irakur = new Irakurketa();
 		
-		irakur.readFile("C:\\Users\\1220635\\Documents\\DEA\\Prak1\\movies-dir\\actors_and_films_1970.txt");
+		/*AktoreBiltegia.getAB().deleteAktoreak();
+		PelikulaBiltegia.getPB().deletePelikulak();
+		*/
+		
+		//irakur.readFile("C:\\Users\\marco\\OneDrive\\Documentos\\Uni\\DEA\\Praktika1\\Informacion para el codigo\\movies-dir\\movies-dir\\actors_and_films_1970.txt");
+		Aktore ak = AktoreBiltegia.getAB().aktoreaBilatu("Ənvər Həsənov");
+		if(ak!=null) {
+			System.out.println(ak.getIzena());
+		}
+		
 		
 	}
 

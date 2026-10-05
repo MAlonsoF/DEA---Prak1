@@ -1,13 +1,27 @@
 package Default;
 
+import java.util.ArrayList;
+
 public class Aktore {
 
 	private String izena;
-	private String url;
+	private String kodea;
+	private ArrayList<Pelikula> filmak = new ArrayList<Pelikula>();
 	
-	public Aktore(String pIzena, String pUrl) {
+	public Aktore(String pIzena, String pKodea) {
 		this.izena = pIzena;
-		this.url = pUrl;
+		this.kodea=pKodea;
+	}
+	
+	public void filmaGehitu(Pelikula pFilma) {
+		this.filmak.add(pFilma);
 	}
 
+	public String getIzena() {
+		return this.izena;
+	}
+	
+	public String getKodea() {
+		return this.kodea;
+	}
 }
