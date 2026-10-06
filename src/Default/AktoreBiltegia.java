@@ -25,19 +25,50 @@ public class AktoreBiltegia {
 		lista.clear();
 	}
 
-	
 	public Aktore aktoreaBilatu(String pIz) {
+		System.out.println("Buscando al aktore");
 		Iterator<Aktore> iter = lista.iterator();
 		while(iter.hasNext()) {
 			Aktore a = iter.next();
-			/*if(a.getIzena().equals(pIz)) {
+			if(a.getIzena().equals(pIz)) {
 				return a;
-			}	*/
-			System.out.println(a.getIzena()+a.getKodea());
+			}
 		}
 		System.out.println("Ez dago aktore hori gordeta");
 		return null;
-		
+	}
+	
+	public boolean aktoreaDago(String pIz) {
+		//System.out.println("Buscando al aktore");
+		Iterator<Aktore> iter = lista.iterator();
+		while(iter.hasNext()) {
+			Aktore a = iter.next();
+			if(a.getIzena().equals(pIz)) {
+				return true;
+			}
+		}
+		//System.out.println("Ez dago aktore hori gordeta");
+		return false;
+	}
+	
+	public void aktoreaEzabatuIzenaz(String pIz) {
+		Iterator<Aktore> iter = lista.iterator();
+		while(iter.hasNext()) {
+			Aktore a = iter.next();
+			if(a.getIzena().equals(pIz)) {
+				iter.remove();
+			}
+		}
+	}
+	
+	
+	//Metodo mio, no me piden que lo haga
+	public void aktoreakErakutsi() {
+		Iterator<Aktore> iter = lista.iterator();
+		while(iter.hasNext()) {
+			Aktore a = iter.next();
+			System.out.println(a.getIzena()+a.getKodea());
+		}
 	}
 }
 

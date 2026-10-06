@@ -24,4 +24,8 @@ public class Aktore {
 	public String getKodea() {
 		return this.kodea;
 	}
+	
+	public ArrayList<Pelikula> filmakAtera(){
+		return filmak;
+	}
 }

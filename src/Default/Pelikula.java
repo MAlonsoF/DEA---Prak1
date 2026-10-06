@@ -16,5 +16,18 @@ public class Pelikula {
 	public void aktoreGehitu(Aktore pAk) {
 		this.aktoreak.add(pAk);
 	}
+
+	public String getIzena() {
+		return this.izena;
+	}
+	
+	public String getKodea() {
+		return this.kodea;
+	}
+	
+	
+	public ArrayList<Aktore> aktoreakAtera(){
+		return aktoreak;
+	}
 	
 }

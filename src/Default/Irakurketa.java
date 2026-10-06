@@ -25,15 +25,19 @@ public class Irakurketa {
 	    	String kodeaPe = koPe[4];
 	    	String izenaPe = datuak[3];
 	    	
-	    	System.out.println("Aktorea:"+kodeaAk+izenaAk);
-	    	System.out.println("Pelikula:"+kodeaPe+izenaPe);
+	    	//System.out.println("Aktorea:"+kodeaAk+izenaAk);
+	    	//System.out.println("Pelikula:"+kodeaPe+izenaPe);
 	    	
 	    	Aktore a = new Aktore(izenaAk,kodeaAk);
 	    	Pelikula p = new Pelikula(izenaPe, kodeaPe);
 	    	a.filmaGehitu(p);
 	    	p.aktoreGehitu(a);
-	    	AktoreBiltegia.getAB().addAktore(a);
-	    	PelikulaBiltegia.getPB().addPelikula(p);
+	    	if(!(AktoreBiltegia.getAB().aktoreaDago(a.getIzena()))) {
+		    	AktoreBiltegia.getAB().addAktore(a);
+	    	}
+	    	if(!(PelikulaBiltegia.getPB().pelikulaDago(p.getIzena()))) {
+	    		PelikulaBiltegia.getPB().addPelikula(p);
+	    	}
 	    }
 	    sarrera.close();
 	  } // try 
